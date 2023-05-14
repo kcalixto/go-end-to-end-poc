@@ -1,0 +1,18 @@
+service: go-end-to-end-poc
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: sa-east-1
+  stage: "poc"
+  environment:
+    NODE_ENV: ${self:provider.stage}
+  
+functions:
+  hello:
+    handler: bin/hello
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
