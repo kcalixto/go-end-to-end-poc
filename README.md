@@ -1,1 +1,1 @@
-# go-end-to-end-poc
+# poc-go-tests
